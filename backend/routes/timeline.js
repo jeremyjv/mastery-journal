@@ -12,7 +12,7 @@ router.route('/').get((req,res) => {
 router.route('/add').post((req, res) => {
     const goals = req.body.skills;
     const skills = req.body.goals;
-    const dates = req.body.dates;
+    const dates = req.body.dates; //arry of date objects
 
     const newTimeline = new Timeline({goals, skills, dates})
 

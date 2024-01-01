@@ -21,8 +21,10 @@ connection.once('open', () => {
 });
 
 const timelineRouter = require('./routes/timeline');
+const entryRouter = require('./routes/entry');
 
 app.use('/timeline', timelineRouter);
+app.use('/entry', entryRouter);
 
 
 app.listen(port, () => {
