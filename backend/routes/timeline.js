@@ -4,7 +4,7 @@ let Timeline = require('../models/timeline.model');
 //returns all timelines
 router.route('/').get((req,res) => {
     Timeline.find()
-        .then(users => res.json(timeline))
+        .then(timelines => res.json(timelines))
         .catch(err => res.status(400).json('Error: ' + err));
 
 })
