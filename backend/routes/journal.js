@@ -10,8 +10,8 @@ router.route('/').get((req,res) => {
 })
 
 router.route('/add').post((req, res) => {
-    const goals = req.body.skills;
-    const skills = req.body.goals;
+    const goals = req.body.goals;
+    const skills = req.body.skills;
     const entries = req.body.dates; //array of date ids
 
     const newJournal = new Journal({goals, skills, entries})
@@ -21,7 +21,16 @@ router.route('/add').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-//need to create PUT route to update goals and skills
+//need to create PUT route to update 
+router.route('/:id').put((req, res) => {
+    Journal.findByIdAndUpdate(req.params.id, {
+        goals: req.body.goals,
+        skills: req.body.skills,
+        entries: req.body.entries
+    })
+        .then(() => res.json("Journal Updated"))
+        .catch(err => res.status(400).json('Error: ' + err));
+})
 
 
 module.exports = router;
