@@ -3,17 +3,17 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 //will need to adjust types accordingly
-const timelineSchema = new Schema({
+const journalSchema = new Schema({
     goals: {type: [], required: true},
     skills: {type: [], required: true},
 
     //contain array of ids to reduce json size
-    dates: {type: [], required: true}
+    entries: {type: [], required: true}
 });
 
-const timeline = mongoose.model('timeline', timelineSchema);
+const journal = mongoose.model('journal', journalSchema);
 
-module.exports = timeline;
+module.exports = journal;
 
 
 

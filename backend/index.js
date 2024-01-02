@@ -20,10 +20,10 @@ connection.once('open', () => {
     console.log('MongoDB database connected successfully')
 });
 
-const timelineRouter = require('./routes/timeline');
+const journalRouter = require('./routes/journal');
 const entryRouter = require('./routes/entry');
 
-app.use('/timeline', timelineRouter);
+app.use('/journal', journalRouter);
 app.use('/entry', entryRouter);
 
 

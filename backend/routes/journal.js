@@ -1,10 +1,10 @@
 const router = require('express').Router();
-let Timeline = require('../models/timeline.model');
+let Journal = require('../models/journal.model');
 
-//returns all timelines
+//returns all journals
 router.route('/').get((req,res) => {
-    Timeline.find()
-        .then(timelines => res.json(timelines))
+    Journal.find()
+        .then(journals => res.json(journals))
         .catch(err => res.status(400).json('Error: ' + err));
 
 })
@@ -14,10 +14,10 @@ router.route('/add').post((req, res) => {
     const skills = req.body. goals;
     const dates = req.body.dates; //array of date ids
 
-    const newTimeline = new Timeline({goals, skills, dates})
+    const newJournal = new Journal({goals, skills, entries})
 
-    newTimeline.save()
-        .then(() => res.json('timeline added')) // returns added user in json
+    newJournal.save()
+        .then(() => res.json('journal added')) // returns added user in json
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
