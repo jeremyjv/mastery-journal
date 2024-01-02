@@ -11,8 +11,8 @@ router.route('/').get((req,res) => {
 
 router.route('/add').post((req, res) => {
     const goals = req.body.skills;
-    const skills = req.body. goals;
-    const dates = req.body.dates; //array of date ids
+    const skills = req.body.goals;
+    const entries = req.body.dates; //array of date ids
 
     const newJournal = new Journal({goals, skills, entries})
 
@@ -20,6 +20,8 @@ router.route('/add').post((req, res) => {
         .then(() => res.json('journal added')) // returns added user in json
         .catch(err => res.status(400).json('Error: ' + err));
 });
+
+//need to create PUT route to update goals and skills
 
 
 module.exports = router;

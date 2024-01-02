@@ -32,4 +32,28 @@ router.route('/add').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+//use to obtain specific entry
+router.route('/:id').get((req, res) => {
+    Entry.findById(req.params.id)
+        .then(entry => res.json(entry))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
+//use to update current entry 
+router.route('/:id').put((req, res) => {
+
+    Entry.findByIdAndUpdate(req.params.id, {
+        day: Date.parse(req.body.day),
+        reflect: req.body.reflect,
+        wins: req.body.wins,
+        action: req.body.action,
+        gratitude: req.body.gratitude,
+        visualize: req.body.visualize
+    })
+        .then(() => res.json("entry updated"))
+        .catch(err => res.status(400).json('Error: ' + err));
+
+    
+});
+
 module.exports = router;
