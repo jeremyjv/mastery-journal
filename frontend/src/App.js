@@ -1,10 +1,23 @@
-import './App.css';
+import React from 'react';
+import './index.css';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@fontsource/azeret-mono"; // Defaults to weight 400
+import "@fontsource/azeret-mono/400.css"; // Specify weight
+import "@fontsource/azeret-mono/400-italic.css"; // Specify weight and style
+//eventually need to import components
 
 function App() {
   return (
-    <div className="App">
-      Mastery Journal
-    </div>
+    <Router>
+      
+      
+      <body class="h-screen bg-black">
+        <h1 className="text-6xl text-white text-center font-body">Mastery Journal</h1>
+      </body>
+      
+    </Router>
+    
   );
 }
 
