@@ -7,16 +7,18 @@ import "@fontsource/azeret-mono/400.css"; // Specify weight
 import "@fontsource/azeret-mono/400-italic.css"; // Specify weight and style
 //eventually need to import components
 
+import Goals from "./components/goals.component";
+
 function App() {
   return (
-    <Router>
-      
-      
+    <div>
       <body class="h-screen bg-black">
         <h1 className="text-6xl text-white text-center font-body">Mastery Journal</h1>
+        <Goals />
       </body>
+    </div>
       
-    </Router>
+    
     
   );
 }
