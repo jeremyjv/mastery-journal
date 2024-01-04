@@ -8,6 +8,13 @@ router.route('/').get((req,res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 
 })
+//returns specific journal
+router.route('/:id').get((req,res) => {
+    Journal.findById(req.params.id)
+        .then(journal => res.json(journal))
+        .catch(err => res.status(400).json('Error: ' + err));
+
+})
 //add new 
 router.route('/add').post((req, res) => {
     const goals = req.body.goals;

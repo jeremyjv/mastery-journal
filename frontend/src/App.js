@@ -13,7 +13,7 @@ function App() {
   return (
     <div>
       <body class="h-screen bg-black">
-        <h1 className="text-6xl text-white text-center font-body">Mastery Journal</h1>
+        <h1 className="text-3xl text-white text-center font-body">Mastery Journal</h1>
         <Goals />
       </body>
     </div>
