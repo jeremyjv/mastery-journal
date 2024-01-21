@@ -8,6 +8,7 @@ import "@fontsource/azeret-mono/400-italic.css"; // Specify weight and style
 //eventually need to import components
 
 import Goals from "./components/goals.component";
+import Skills from "./components/skills.component";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <body class="h-screen bg-black">
         <h1 className="text-3xl text-white text-center font-body">Mastery Journal</h1>
         <Goals />
+        <Skills />
       </body>
     </div>
       
