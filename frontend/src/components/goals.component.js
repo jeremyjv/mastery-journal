@@ -24,8 +24,6 @@ export default class Goals extends React.Component {
          
     }
 
-
-
    handleChange(index, newValue) {
        this.setState((prevState) => {
            const updated = this.state.goals;
@@ -34,7 +32,6 @@ export default class Goals extends React.Component {
            //update journal object in database
            axios.put('http://localhost:4000/journal/65942e93c325434c995eaa4b', {
                 goals: updated
-                
            })
            .then((res) => console.log(res))
            .catch((err) => console.log(err))
@@ -47,9 +44,6 @@ export default class Goals extends React.Component {
    }
 
    
-    
-
-
     //Goals: { this.state.goals.map(item => `[ ${item} ]`) }
     //eventually wrap each item component with a button that updates the journal 
     render() {

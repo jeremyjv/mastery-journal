@@ -7,8 +7,7 @@ export default class Skills extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            skills: []
-
+            skills: [],
            
         }
         
@@ -18,23 +17,60 @@ export default class Skills extends React.Component {
         axios.get('http://localhost:4000/journal/65942e93c325434c995eaa4b')
             .then(res => {
                 this.setState({
-                    skills: res.data.skills
+                    skills: res.data.skills,
                 })
             })
                 
+         
     }
-    
+
+   handleChange(index, newValue) {
+       this.setState((prevState) => {
+           const updated = this.state.skills;
+           updated[index] = newValue;
+
+           //update journal object in database
+           axios.put('http://localhost:4000/journal/65942e93c325434c995eaa4b', {
+                skills: updated
+           })
+           .then((res) => console.log(res))
+           .catch((err) => console.log(err))
+        
+           return {skills: updated}
+           
+       })
+
+       // create patch update to database
+   }
+
+   
+    //Goals: { this.state.goals.map(item => `[ ${item} ]`) }
     //eventually wrap each item component with a button that updates the journal 
     render() {
         
         return (
-            <div>
-                <div className='text-white font-body text-center'>
-                    Skills: { this.state.skills.map(item => `[ ${item} ]`) }
-                   
+
+                <div className= 'text-center flex text-white font-body justify-center'>
+
+                Skills: { 
+                    <div className= 'text-center flex'>
+                    {this.state.skills.map((item, index) => (
+                        <div key={index}>
+                        [
+                        <input
+                    
+                        className= 'bg-black text-center outline-none w-15'
+                        placeholder='set skill'
+                        value={item}
+                        onChange={(e) => this.handleChange(index, e.target.value)}
+                        />
+                        ]
+                        </div>
+                            
+                    ))}
+                    </div>
+                }
                 </div>
-            </div>
-            
         );
     }
 }
