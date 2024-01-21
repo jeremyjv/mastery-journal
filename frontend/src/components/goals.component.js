@@ -26,21 +26,7 @@ export default class Goals extends React.Component {
          
     }
 
-   renderGoal(goal) {
-       // for each goal
-       var size = goal.length;
-       
-       
-       return (
-        
-        <input className= 'bg-black text-center outline-none w-10'
-            
-            placeholder= {goal}
-            onChange={(e) => {this.setState({ goals: e.target.value})}}
-            
-        />
-       )
-   }
+
 
    handleChange(index, newValue) {
        this.setState((prevState) => {
@@ -48,7 +34,7 @@ export default class Goals extends React.Component {
            updated[index] = newValue;
            return {goals: updated}
        })
-       // create patch update to api 
+       // create patch update to database
    }
 
    
@@ -59,10 +45,8 @@ export default class Goals extends React.Component {
     //eventually wrap each item component with a button that updates the journal 
     render() {
         
-        
         return (
 
-        
                 <div className= 'text-center flex text-white font-body justify-center'>
 
                 Goals: { 
@@ -80,15 +64,10 @@ export default class Goals extends React.Component {
                         ]
                         </div>
                             
-                    ))
-                    
-                    }
+                    ))}
                     </div>
                 }
                 </div>
-            
-            
-            
         );
     }
 }
