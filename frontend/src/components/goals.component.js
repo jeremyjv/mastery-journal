@@ -61,36 +61,32 @@ export default class Goals extends React.Component {
         
         
         return (
-            
-            
-        
-                
-                <div className='text-white font-body content-center'>
-        
-                    <div className= 'text-center flex'>
 
-                    Goals: { 
-                        <div className= 'text-center flex'>
-                        {this.state.goals.map((item, index) => (
-                            <div key={index}>
-                            [
-                            <input
-                        
-                            className= 'bg-black text-center outline-none w-15'
-                            placeholder='set goal'
-                            value={item}
-                            onChange={(e) => this.handleChange(index, e.target.value)}
-                            />
-                            ]
-                            </div>
-                             
-                        ))
-                        
-                        }
+        
+                <div className= 'text-center flex text-white font-body justify-center'>
+
+                Goals: { 
+                    <div className= 'text-center flex'>
+                    {this.state.goals.map((item, index) => (
+                        <div key={index}>
+                        [
+                        <input
+                    
+                        className= 'bg-black text-center outline-none w-15'
+                        placeholder='set goal'
+                        value={item}
+                        onChange={(e) => this.handleChange(index, e.target.value)}
+                        />
+                        ]
                         </div>
+                            
+                    ))
+                    
                     }
                     </div>
+                }
                 </div>
+            
             
             
         );
