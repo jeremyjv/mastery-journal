@@ -8,7 +8,6 @@ export default class Goals extends React.Component {
         super(props);
         this.state = {
             goals: [],
-            amount: 0
            
         }
         
@@ -19,7 +18,6 @@ export default class Goals extends React.Component {
             .then(res => {
                 this.setState({
                     goals: res.data.goals,
-                    index: res.data.goals.length
                 })
             })
                 
@@ -32,8 +30,19 @@ export default class Goals extends React.Component {
        this.setState((prevState) => {
            const updated = this.state.goals;
            updated[index] = newValue;
+
+           //update journal object in database
+           axios.put('http://localhost:4000/journal/65942e93c325434c995eaa4b', {
+                goals: updated
+                
+           })
+           .then((res) => console.log(res))
+           .catch((err) => console.log(err))
+        
            return {goals: updated}
+           
        })
+
        // create patch update to database
    }
 
