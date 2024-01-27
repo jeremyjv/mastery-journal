@@ -40,10 +40,11 @@ router.route('/:id').get((req, res) => {
 });
 
 //use to update current entry 
+//day: Date.parse(req.body.day),
 router.route('/:id').put((req, res) => {
 
     Entry.findByIdAndUpdate(req.params.id, {
-        day: Date.parse(req.body.day),
+        day: req.body.day,
         reflect: req.body.reflect,
         wins: req.body.wins,
         action: req.body.action,
