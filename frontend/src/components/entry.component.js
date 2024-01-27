@@ -6,10 +6,10 @@ export default class Entry extends React.Component {
         super(props);
         this.state = {
             day: "",
-            reflect: " ",
-            wins: " ",
-            action: " ",
-            gratitude: " ",
+            reflect: "",
+            wins: "",
+            action: "",
+            gratitude: "",
             visualize: ""
            
         }
@@ -102,10 +102,9 @@ export default class Entry extends React.Component {
 
             <div className="text-center font-body text-white"> 
                 Entry 1/27/24
-
-                
-            
-                <form className="justify-center">
+                <br/>
+                <br/>
+                <div className="text-center flex">
                     <div className="flex w-96 flex-col text-white">
                         <label classname="text-center">Reflect</label>
                         <textarea className="bg-black text-white"
@@ -116,9 +115,49 @@ export default class Entry extends React.Component {
                         /> 
                     </div>
 
-                    
-                    
-                </form>
+                    <div className="flex w-96 flex-col text-white">
+                        <label classname="text-center">Wins</label>
+                        <textarea className="bg-black text-white"
+                            placeholder= "Prevous small wins..."
+                            value= {this.state.wins}
+                            onChange={(e) => this.handleChange('wins', e.target.value)}
+                        
+                        /> 
+                    </div>
+
+                    <div className="flex w-96 flex-col text-white">
+                        <label classname="text-center">Action</label>
+                        <textarea className="bg-black text-white"
+                            placeholder= "Actions to move your forward..."
+                            value= {this.state.action}
+                            onChange={(e) => this.handleChange('action', e.target.value)}
+                        
+                        /> 
+                    </div>
+
+                    <div className="flex w-96 flex-col text-white">
+                        <label classname="text-center">Gratitude</label>
+                        <textarea className="bg-black text-white"
+                            placeholder= "What do you have going for you..."
+                            value= {this.state.gratitude}
+                            onChange={(e) => this.handleChange('gratitude', e.target.value)}
+                        
+                        /> 
+                    </div>
+
+                    <div className="flex w-96 flex-col text-white">
+                        <label classname="text-center">Visualize</label>
+                        <textarea className="bg-black text-white"
+                            placeholder= "Visualize the things you will do..."
+                            value= {this.state.visualize}
+                            onChange={(e) => this.handleChange('visualize', e.target.value)}
+                        
+                        /> 
+                    </div>
+                 </div>
+
+                 
+
             </div>
         )
     }

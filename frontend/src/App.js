@@ -25,6 +25,7 @@ function App() {
       <Goals />
       <Skills />
       <br/>
+      <br/>
       <Entry />
         
         
