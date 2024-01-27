@@ -128,7 +128,7 @@ export default class Entry extends React.Component {
                     <div className="flex w-96 flex-col text-white">
                         <label classname="text-center">Action</label>
                         <textarea className="bg-black text-white"
-                            placeholder= "Actions to move your forward..."
+                            placeholder= "Actions to move you forward..."
                             value= {this.state.action}
                             onChange={(e) => this.handleChange('action', e.target.value)}
                         
