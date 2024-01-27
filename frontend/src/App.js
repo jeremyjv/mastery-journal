@@ -15,11 +15,15 @@ function App() {
   return (
     <div>
       <body class="h-screen bg-black">
+      <br/>
+      <br/>
+      <br/>
+      <br/>
         <h1 className="text-3xl text-white text-center font-body">Mastery Journal</h1>
-        
+        <br/>
+        <br/>
       <Goals />
       <Skills />
-      <br/>
       <br/>
       <Entry />
         
